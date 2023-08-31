@@ -1,0 +1,19 @@
+;; Paiu Teofil 313 CB
+
+Pentru rezolvarea primului task am exras octet cu octet de la adresa respectiva si am adunat cheia fiecarui octet 
+in caz ce depasea valoarea lui Z scadeam  26
+
+Pentru rezolvarea celui de al doilea task am iterat prin vectori si structuri 
+
+-- point-distance preia x1 si x2 din vector si verifica daca acestia sunt egali daca da scade y1 si y2 in functie de care e mai mare
+altfel scade x1 si x2 in functie de cel mai mare
+
+-- road preia implementarea de la subpunctul precedend doar ca tot codul se afla intr-un loop si incrementez prin vectorul de
+structuri
+
+-- is_sqare foloseste 2 registre unua dintre acestea o incrementez si o ridic la patrat urmand sa verific cu elementul din vector
+daca elementul din vector este egal cu valoarea la patrat atunci este patrat perfect daca in urma a mai multor iterati este mai mic inseamna ca nu este patrat perfect
+
+Pentru task-ul 3 am ales sa ajung la encriptare prin niste formule algebrige 
+
+iar pentru task-ul 4 parcurg matricea in spirala folosindu-ma de niste variabile globale  

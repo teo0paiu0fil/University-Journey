@@ -1,0 +1,15 @@
+
+Programul citeste de la linia de comanda linie cu linie pana la intalnirea aparitiei cuvantului exit
+primul cuvand din linia citita semnifica comanda ce urmeaza sa fie executata
+
+Pentru functia de inserare am salvat toate datele si tipul acestora in niste variabile pe care le dau ca parametri functilor de constructie a structurilor de date in care aloc structura data_structures si construiesc vectorul void *data
+
+Rezultatul functiei in atribui unei variabile care o dau ca parametru functilor add_last si add_at unde daca *arr nu este alocat ii aloc dimensiunea datei  ce urmeaza sa o introduc , altfel realloc *arr cu dimensiunea sa actuala + dimensiunea variabilei pe care o aloc copiez memoria de la data_structures in 2 operati odata pentru header si a doua oara pentru *data in acelasi mod lucrez si pentru add_at
+
+Fuctia find delete_at si insert_at au aceasi abordare cand vine vorba de index parcurg numarul de elemente salvate in *arr si incrementez o variabila i pentru fiecare parcurgere daca index = i realizez operatia specifica
+
+Pentru add_at realloc *arr si copiez memoria de la pozitia in care index  = i cu marimea datei ce urmeaza sa fie introdusa si dupa acea inserez data 
+
+Pentru delete_at copiez data de la pozitia urmatoare de index pe pozitia indexului realloc *arr cu diferenta dintre lungimea lui *arr si diferenta dintre pozitia urmatoare de index si pozitia indexului
+
+La final dezaloc toate variabilele alocate.

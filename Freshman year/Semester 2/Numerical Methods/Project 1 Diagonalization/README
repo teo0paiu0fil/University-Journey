@@ -1,0 +1,13 @@
+ Paiu Teofil 313CB
+
+   PageRank Algorithm
+
+  Pentru realizarea primei cerinte am construit matricea de adiacenta din informatile citite din fisierul de intrare
+in cazul in care un nod avea legaturi spre el insusi il scadeam din numarul de legaturi din acel nod
+  Dupa asta folosind algoritmul de la prima sursa calculez vectorul R conform formulei date.
+  
+  Pentru a doua cenrinta folosesc aceasi structura de constructie a matricei de adinacenta
+ca in prima cerinta , doar ca caluculez inversa lui A cu ajutorul algoritmului Gram-Schimdt optimizat, calculez matricile Q si R din factorizare QR si rezol sistemele superior triunghiulare pentru fiecare coloana din A.
+
+   Pentru ultima cerinta apelez cele 2 functii implementate, afisez numarude pagini si cele 2 rezultate ale functilor iterative , respectiv algebraic, sortez cu functia sort al doilea vector rezultat si il transmit catre functia care calculeaza gradul de apartenenta 
+si afisez clasamentul 

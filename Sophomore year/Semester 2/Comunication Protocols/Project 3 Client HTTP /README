@@ -1,0 +1,18 @@
+Paiu Teofil 323CB
+
+   Am plecat cu implementarea din scheletul laboratorului de http pentru a sari partea de lucrat efectiv cu socketi, totusi
+am modificat putin functile de send_to_server si recevie_form_server pentru a lucra cu send si recv in loc de read si write.
+   Pentru simplicitate in request.c am taiat din parametri pentru functile compute_post_message si compute_get_message,
+compute_delete_message este un get modificat ca sa respecte cerinta.
+   Ca si implementare multiplexez stdin-ul si socketul cu care comunicam cu serverul astfel incat daca acesta isi ia timeout
+sa il redeschid, pe langa asta am ales sa redeschid o conexiunea de fiecare daca cand trimit un mesaj, deoarece nu pot garanta
+timpul de completarea a anumitor comenzi a clientului, iar in acest timp serverul ar putea inchide conexiunea.
+   Toate comenzile sunt procesate intr-un while apelanduse o functie care creaza mesajul cu datele introduse de utilizator pentru
+comanda data, ca la final mesajul creat sa fie trimis la server.
+   Pentru tratarea erorilor logice, de input sau trimise de server dar si a cazurilor de succes am ales sa am un cod de culori:
+    -rosu: eroare (input invalid, actiuni care au ridicat erori in server)
+    -galbel: avertizment (erori logice, precum incercarea de login in timp ce utilizatorul e deja conectat)
+    -verde: succes (comanda executata cu succes)
+   Pentru parsarea json am ales sa o fac proprie fara o librarie specializata pe acest lucru din cauze personale de preferinta
+(nu am dorit sa ma complic prea mult in aceasta directie ,deoarece nu stiam exact ce astetica se doreste in cadrul raspunsului),
+am incercat sa fac informatile vizibile (get_books) ,dar sunt constient ca pot aparea erori de parsare din aceasta cauza.

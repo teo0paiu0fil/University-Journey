@@ -1,0 +1,34 @@
+Paiu Teofil 323CB
+
+#nostory
+    pentru task-1 am ales o implementare greedy sortez vectori crescator, respectiv descrescator
+    iar pentru fiecare iteratie aleg maxim-ul local pe care il adaug la solutie
+    In final ajung la o complexitate 2*nlogn + 2*n cara apartine de O(nlogn)
+
+#sushi
+    pentru task-1 folosesc o versiunea de ruxac din laborator imi calculez ratingul pentru fiecare
+    platou si dupa gasesc solutia in dp[n][buget]
+    pentru task-2 folosesc aceasi abordare ca la primul task doar ca adaug o verificare suplimentara
+    daca elementul curent incape de 2 ori
+    pentru task-3 am adaugat inca o dimensiune la matrice deoarece voiam sa memorez ratingul pentru un numar
+    de elemente alese spre exemplu dp[10][10][2] reprezinta rating-ul maxim ce se poate atinge prin selectarea
+    a 2 elemente care nu depasesc un buget de 10 din primele 10 elemente, analog dp[m][buget][n] reprezinta
+    scorul maxim pentru bugetul maxim selectand doar n elemente din m elemente
+    In final primele 2 task-uri au o complexitate m*buget ,iar task-ul 3 are o complexitate m*buget*n
+
+#semnale
+    pentru task-1 am observat 3 reguli la recurenta, am construit o matrice de 2 dimensiuni pe lini am numarul
+    de 0 pe care semnalul il poate avea iar pe coloane numarul de 1. Cazul de baza a fost ca pentru orice numar
+    de 0 uri pentru 0 1-uri pot construi un semnal, dupa am recurenta cand i == j : dp[i][j] = i + 1 sau j + 1
+    si pentru i != j : dp[i][j] = dp[i - 1][j] + dp[i - 1][j - 1] si cand j - 1 == i dp[i][j] = 1
+    pentru task-2 regula s-a schimbat destul de mult, iar dupa nenumarate ore am ajuns la formula de recurenta 
+    dp[i][j] = dp[i][j-1] + dp[i-1][j] - dp[i - 1][k]  unde k : j - 2 
+    In final ambele taskuri au avut o complexitate de x*y 
+
+#feribot 
+    am realizat o cautare binara practic calculez suma vectorului si o impart la 2 dupa asta caut sa vad daca
+    ma incadrez in numarul de feriboturi, daca am mai multe feriboturi decat ma restrictioneaza problema atunci caut o suma mai mare iar daca am mai putine feriboturi retin solutia ca si una valida si ma duc mai departe pentru a o maximiza si repet operatia pana cand am gasit solutia finala si nu mai pot sa maximizez suma
+    In final am o complexitate de n*logn 
+
+
+    

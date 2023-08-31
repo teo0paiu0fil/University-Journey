@@ -1,0 +1,15 @@
+Paiu Teofil 323CB
+
+Problema 1: supercomputer
+    pentru rezolvarea problemei am ales sa realizez o sortare topologica a grafului prin care sa optin
+    ordinea taskurilor, am folosit 2 cozi in loc de una pentru fiecare set de data, astfel fortez sortarea topologica
+    pe un anumit set pana nu mai pot rezolva task-urile respective. Pentru a afla numarul minim incerc sa pornesc de la ambele
+    seturi de date dupa care le compar si aleg minimul dintre ele.
+    Ca si complexitate intreaga operatie ajunge la un O(n+m) deoarece se apeleaza de 2 ori toposort cea ce nu creste rankul de
+    complexitate si fata de o sortare topologica cu o singura coada e aproximativ la fel deoarece cele 2 cozi combinate fac cat cea intreaga
+    
+Problema 4: magazin
+    pentru rezolvarea partiala a problemei am ales sa realizez o parcurgere in adancime cu un numar de pasi, adica in timpul parcurgeri
+    pentru fiecare node scad un pas daca in timpul parcurgeri am ajuns la 0 pasi returnez nodul curent, daca ajung la finalul parcurgeri
+    si inca am pasi returnez -1.
+    Ca si complexitate operez un dfs de complexitate O(n*m) de q ori unde q este numarul de intrebari deci in final O(n*m*q)

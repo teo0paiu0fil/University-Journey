@@ -1,0 +1,12 @@
+
+In implementarea temei verific sistematic pe rand linile coloanele si regiunile(zonele)
+
+La verificarea linilor incep de la steluta si memorez fiecare element parcurs in diferite stari 
+precum q_L1 sau q_L234 care reprezinta cifrele anterioare daca gasesc o cifra pe care am memorat-o 
+anterior atunci trec in starea N altfel continui de fiecare data cand gasesc * , odata ce am ajuns 
+la caracterul vid ma opresc si o iau de la inceput cu coloanele cu aceasi gandire , singura diferenta
+ e parcurgerea , fac o coloana pe parcurgere prima de la coloana 1 la coloana 4 avand stari similar 
+ cu cele de la lini doar ca am si niste stari de parcurgere pana dau de urmatorul element al coloanei 
+ respective odata ce am trecut de coloana 4 si am dat de caracterul vid, incep cu zonele  verificand 
+ dintr-o parcurgere zonele 1 si 3 la intoarcere 4 si 2 , daca programul nu a intrat in starea N pana 
+ acum si dupa ce am verificat zona 2 am dat de caracterul vid inseamna ca solutia este corecta

@@ -1,0 +1,39 @@
+Paiu Teofil 323CB 
+
+1) procesul de forward pentru ipv4 (0x0800) (functia deal_with_ip4)
+- primesc un mesaj si verific daca eu sunt destinatia in ether header
+- verific starea in care am primit pachetul calculand checksum-ul
+- verific daca ttl nu a expirat, in cazul in care acesta a expirat trimit pachet (ICMP time exceeded)
+- reacalculez checksum-ul din cauza ca am modificat ttl-ul
+- caut next_hop-ul in tablela de rutare 
+- pentru a obtine mac_addr destinatiei (next_hop) verific mai intai cache-ul daca deja am salvata adresa, altfel generez un arp_request si salvez pachetul pentru al putea trimite cand primesc reply cu mac-ul necesar
+- trimit pachetul updatat cu destinatia potrivita
+
+2) protocolul de ARP (0x0806) (functia deal_with_arp)
+- daca primesc un reply:
+    - salvez mac-ul primit in cache
+    - parcurg coada de pacheta pentru a verifica daca putem trimite ceva
+- daca primesc un request:
+    - raspund cu un reply cu adresa mac cautata
+
+3) functi auxiliare pe care le folosesc pentru a updata diferite headere:
+- complete_ether_hdr (completeaza un ether header)
+- complete_ip_hdr (completeaza un ip header)
+- complete_arp_hdr (completeaza un arp header)
+- get_arp_cache (returneaza o structura ce contine mac si ip pentru destinatia urmatoare)
+- send_arp_request (trimite un pachet ce contine un arp_request)
+- send_icmp (trimite un pachet icmp fie reply sau error);
+
+4) LPM 
+- am implementat o versiune de direct trie practic pe primul nivel am 65536 care sunt toate combinatie de 16 biti din adresa ip, am ales asta pentru a taia numarul de accese cand caut o adresa la jumatate 
+-dupa primul nivel caut bit cu bit cel mai bun match
+
+Grafic arata asa
+
+                                             0   (nivel 0)
+
+    1          2            3           4          5          6       ..................... 65536 (nivel 1)
+   / \        / \          / \    ..................                                              (nivel 2)
+  0   1      0   1        0   1
+
+  iar de aici este un trie normal precum cel descris in enunt
