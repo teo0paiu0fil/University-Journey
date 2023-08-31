@@ -1,0 +1,13 @@
+adauga_eveniment; Parada Militara; 01-Dec-2022 12:00:00; 01-Dec-2022 14:00:00; Stat
+afiseaza_evenimente_luna; 1
+adauga_eveniment; Festival Muzical; 30-Jul-2022 12:00:00; 03-Aug-2022 14:00:00; Untold SRL
+adauga_eveniment; Targ de antichitati; 30-Oct-2022 12:00:00; 2-Nov-2022 14:00:00; Carturesti SRL
+afiseaza_evenimente_luna; 10
+schimba_data; Targ de antichitati; 04-Dec-2022 10:00:00; 7-Dec-2022 16:00:00; ION SRL
+adauga_eveniment; Festival Food Street; 10-Jul-2022 12:00:00; 17-Jul-2022 18:00:00; DOREL BUCATARUL SRL
+adauga_eveniment; Targ de Craciun; 01-Dec-2022 12:00:00; 24-Dec-2022 20:00:00; Stat
+afiseaza_evenimente_luna; 7
+afiseaza_evenimente
+sterge_eveniment; Parada Militara
+sterge_eveniment; Targ de Craciun
+afiseaza_evenimente_luna; 12

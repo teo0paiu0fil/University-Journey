@@ -1,0 +1,21 @@
+Evenimentele din luna : Ianuarie
+Evenimentele din luna : Octombrie
+{
+'eveniment' : 'Targ de antichitati',
+'organizator' : 'Carturesti SRL',
+'dataInceput' : '30-Oct-2022 12:00:00',
+'dataSfarsit' : '02-Nov-2022 14:00:00'
+}
+Evenimentele din luna : Iulie
+{
+'eveniment' : 'Festival Food Street',
+'organizator' : 'DOREL BUCATARUL SRL',
+'dataInceput' : '10-Jul-2022 12:00:00',
+'dataSfarsit' : '17-Jul-2022 18:00:00'
+}
+{
+'eveniment' : 'Festival Muzical',
+'organizator' : 'Untold SRL',
+'dataInceput' : '30-Jul-2022 12:00:00',
+'dataSfarsit' : '03-Aug-2022 14:00:00'
+}

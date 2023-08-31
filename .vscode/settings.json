@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.pl": "prolog",
+        "headers.h": "c",
+        "socket.h": "c"
+    }
+}

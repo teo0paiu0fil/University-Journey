@@ -1,0 +1,4 @@
+adauga_eveniment; Parada Militara; 01-Dec-2022 12:00:00; 01-Dec-2022 14:00:00; Stat
+adauga_eveniment; Targ de antichitati; 30-Oct-2022 12:00:00; 2-Nov-2022 14:00:00; Vintage SRL
+schimba_data; Targ de antichitati; 04-Dec-2022 10:00:00; 7-Dec-2022 16:00:00
+afiseaza_evenimente

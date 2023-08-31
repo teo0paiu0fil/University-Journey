@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.events.TestEvenimentePrimarie" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-12-28T16:11:23" hostname="192.168.1.5" time="0.267">
+  <properties/>
+  <testcase name="changeEvent()" classname="org.events.TestEvenimentePrimarie" time="0.201"/>
+  <testcase name="addEvent()" classname="org.events.TestEvenimentePrimarie" time="0.011"/>
+  <testcase name="deleteEvent()" classname="org.events.TestEvenimentePrimarie" time="0.01"/>
+  <testcase name="showEventsMonth()" classname="org.events.TestEvenimentePrimarie" time="0.016"/>
+  <testcase name="All()" classname="org.events.TestEvenimentePrimarie" time="0.019"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

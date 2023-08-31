@@ -1,0 +1,4 @@
+adauga_eveniment; Parada Militara; 01-Dec-2022 12:00:00; 01-Dec-2022 14:00:00; Stat
+adauga_eveniment; Festival Muzical; 30-Jul-2022 12:00:00; 03-Aug-2022 14:00:00; NeverSee
+adauga_eveniment; Targ de antichitati; 30-Oct-2022 12:00:00; 2-Nov-2022 14:00:00; ION SRL
+afiseaza_evenimente

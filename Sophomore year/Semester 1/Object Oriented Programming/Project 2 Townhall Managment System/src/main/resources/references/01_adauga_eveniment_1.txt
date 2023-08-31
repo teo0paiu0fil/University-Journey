@@ -1,0 +1,18 @@
+{
+'eveniment' : 'Festival Muzical',
+'organizator' : 'NeverSee',
+'dataInceput' : '30-Jul-2022 12:00:00',
+'dataSfarsit' : '03-Aug-2022 14:00:00'
+},
+{
+'eveniment' : 'Targ de antichitati',
+'organizator' : 'ION SRL',
+'dataInceput' : '30-Oct-2022 12:00:00',
+'dataSfarsit' : '02-Nov-2022 14:00:00'
+},
+{
+'eveniment' : 'Parada Militara',
+'organizator' : 'Stat',
+'dataInceput' : '01-Dec-2022 12:00:00',
+'dataSfarsit' : '01-Dec-2022 14:00:00'
+}
