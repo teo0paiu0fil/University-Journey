@@ -1,0 +1,51 @@
+Instrucțiuni de compilare:
+    - make build: pentru compilare
+    - make run: pentru rulare
+
+
+Detalii despre structura proiectului:
+    - am ales sa implementam o clasa abstracta APiece, urmand ca fiecare piesa sa o extinda
+    - fiecare tip de piesa are o clasa separata in care exista metoda calculatePossibleMoves
+        care intoarce toate miscarile posibile ale piesei in functie de tabla curenta
+    - restul de cod adaugat se afla in Bot unde:
+        - tinem cont de cum se modifica tabla la fiecare moment (recordMove)
+        - facem miscarile speciale (rocada -> castling; en passant -> enpassant; drop in -> addPieceFromCaptured)
+        - verificam daca ultima miscare a provocat sah, iar in acest caz restrictionam miscarile
+            pentru a rezolva: fie mutam regele intr-o pozitie sigura, fie blocam atacul cu alta piesa,
+            fie capturam piesa (sah + canMakeSah + sahSolver)
+        - alegem o miscare aleatorie din cele posibile
+        - in cazul in care se poate face rocada sau en passant, atunci alegem sa facem miscarea aceasta
+        - daca suntem in sah, putem alege doar miscarile care rezolva sahul
+
+
+Detalii despre abordarea algoritmică a etapei: ce algoritmi ați folosit, cum i-ați combinat, de ce, complexități:
+    - nu am folosit niciun algoritm la aceasta etapa
+    - din punct de vedere al complexitatii, functia calculateNextMove are complexitate O(n^4) pentru a executa o miscare
+
+
+Surse de inspirație:
+    - nu ne-am inspirat de nicaieri
+
+
+Responsabilitatea fiecărui membru al echipei:
+    - Paiu Teofil:
+        - micarile pionului
+        - miscarile regelui
+        - sahSolver
+        - canMakeSah
+        - recordMove
+        - debugging
+    - Vasilache Maria-Augusta:
+        - miscarile reginei
+        - miscarile calului
+        - tabla (createTable)
+        - rocada (castling)
+        - debugging
+    - Giuglan Luiza-Viorica:
+        - miscarile turei
+        - miscarile nebunului
+        - en passant
+        - drop in (addPieceFromCaptured)
+        - calculateNextMove
+        - debugging
+        - Makefile
