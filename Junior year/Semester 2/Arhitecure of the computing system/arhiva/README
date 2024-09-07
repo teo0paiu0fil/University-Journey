@@ -1,0 +1,45 @@
+# Tema 3 optimizare
+
+PAIU TEOFIL 333CB
+
+ <!-- cel mai bine vazut in .md -->
+
+#### Implementare blas:
+	- am alocat niste matrici pentru a stoca calculul intermediar
+	- am calculat cu ajutorul dtrmm operatia A_transpus * B deoarece A este superior triunghiulara
+	- am calculat cu aceasi functie B * A 
+	- am folosit functia daxpy care rezolva y = alfa * x + y si am considerat matricile mele vectori pentru a realiza adunare
+	- iar in final am folosit dgemm deoarece in urma inmultirilor nu mai am o matrice triunghiulara
+
+#### Implementarea neopt:
+	- am alocat niste matrici pentru a stoca calcului intermediar
+	- am calculat A_trans * B pentru A[i][j], A_trans[i][j] = A[j][i] iar pentru a tine cont ca matricea e superior triunghilara am parcurs k doar pana la i pentru nu realiza calculele 0 * Bij 
+	- am calculat B * A asemanator tinand cont ca A e superior triunghiulara de data aceasta k este pana  j deoarece operatia se realizeaza cu matricea superior triunghiulara pe partea dreapta a inmultiri
+	- am adunat cele 2 rezultate pentru a optine A_trans * B + B * A
+	- iar in final am facut o inmultire normala de matrici intre rezultatul precedent si B_trans deoarece nu mai avem de aface cu un calcul ce implica o matrice superior triunghiulara
+
+#### Implementarea opt_m:
+	- am alocat niste matrici pentru a stoca calcului intermediar
+	- am calculat A_trans * B in temp_1  pentru a optimiza aceasta inmultime am ales i-k-j si k pana la i deoarece A este superior triunghiulara
+	- am calculat B * A peste A_trans* * B pentru a realiza si adunarea in acelasi timp cu o parcurgere i-k-j cu j incepand cu k pentru a nu efectua calculele 0 * (element din B)
+	- am realizat ultima operatia in ordinea i-j-k deoarece B este transpusa deci oridinea sa era temp_1[i][k] * B[j][k] cea ce face ca ambele acesari sa fie secventiale in memorie iar C[i][j] constanta.
+	- In final am vrut sa ii hintuiesc compilatorului ca pointerii folositi pentru operatii sa fie stocati in registrii pentru a optimiza accesul la memorie.
+
+
+#### Explicati pentru valorile optinute pe cachgrind:
+	- pentru valorile optinute am observat ca instruction miss-urile
+	pentru blas sunt mai mici decat cele pentru opt_m care sunt mai mici decat cele pentru neopt.
+	- pentru cache miss-uri blas are cele mai mici urmate de opt_m si neopt.
+	- comparativ vorbind neoptim realizeaza cele mai multe acessuri la memorie si are cele mai mari cache miss-uri si instruction miss-uri, deoarece nu foloseste nicio tehnica de optimizare pentru a calcula valoarea pointerilor din matrici sau pentru a folosi la capacitate maxima informatile din cache.
+
+	-- Pentru optimizarea implementarii opt_m am folosit register pentru a semnala procesorului sa stocheze aceste valori in registri cand este posibil, am salvat pointerii catre valorile care sunt necesare pentru a calcula si salva rezultat pentru a optimiza numarul de operati de calculare a adresei respective si diferite parcurgeri ale matricilor pentru a avea acces secvential sau constant la memorie.
+
+#### Grafic:
+
+![Grafic info](./grafic.png "grafic")
+
+Dupa cum se poate observa din grafic odata cu cresterea dimensiunii 
+matricilor timpul de executie creste aproximativ polinomial pentru 
+toate implementarile (chiar daca la blas aceasta pare liniara daca calculam functia care trece prin aceste puncte folosind interpolare Lagrange ([cu ajutorul acestului site](https://www.dcode.fr/function-equation-finder)) obtinem 3.78e-10N^3 + 2.87e-8N^2 + 7.49e-6N + 4.08e-4 care este o functie polinomiala de gradul 3 ) insa implementarile blas si opt_m au o panta 
+mai mica decat cea a implementarii neopt.
+

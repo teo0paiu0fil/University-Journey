@@ -1,0 +1,15 @@
+PAIU TEOFIL 333CB
+
+Dupa analiza pasilor de la testul 5 din cpu_miner am decis sa pornesc MAX_NONCE threaduri,
+iar fiecare thread isi valideze nonce-ul urmand aceasi pasi:
+- transforma nonce-ul in string 
+- concateneaza nonce-ul transformat in string la block content
+- aplica sha256 pe concatenarea precedenta
+- valideaza rezultatul cu dificultatea aleasa
+- daca rezultatul e bun updatez valorile
+
+Numarul de threaduri pe bloc l-am ales dupa rularea consecutiva cu valori diferite 256, 128, 518, 1024
+am constatat ca pentru un numar mai mic de blocuri rularea este mai rapida (probabil procesorul  grafic 
+are un numar mic de SM's, dar e doar o presupunere). 
+
+Rezultatul primit este identic cu cel de la cpu_miner.
